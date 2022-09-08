@@ -9,7 +9,7 @@ import { fetchSingleCoach, resetCoach } from "../../store/coach/actions";
 import { baseURL } from "../../utils/axios";
 import profimg from '../../coachfiles/3-Untitled.png'
 import { confirmAlert } from 'react-confirm-alert'; // Import
-import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+// import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 const CoachesDetail = () => {
   let navigate=useNavigate();
   const params = useParams();
@@ -247,7 +247,7 @@ console.log(data)
               Edit
             </Link>
             <button className="rounded mx-3 border-red-700 border-[1px] py-[4px] px-10"
-               onClick={()=>DeleteHandlerCoach(data._id)}
+               onClick={()=>submit(data._id)}
             >
               Delete
             </button>
