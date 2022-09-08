@@ -8,7 +8,7 @@ import Modal from "../../components/modal";
 import { fetchSingleCoach, resetCoach } from "../../store/coach/actions";
 import { baseURL } from "../../utils/axios";
 import profimg from '../../coachfiles/3-Untitled.png'
-import { confirmAlert } from 'react-confirm-alert'; // Import
+// import { confirmAlert } from 'react-confirm-alert'; // Import
 // import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 const CoachesDetail = () => {
   let navigate=useNavigate();
@@ -32,25 +32,25 @@ const CoachesDetail = () => {
       setData(data.data?.data);
     })();
   }, []);
-  const DeleteHandlerCoach=async(_id)=>{
-    confirmAlert({
+  // const DeleteHandlerCoach=async(_id)=>{
+  //   confirmAlert({
 
-      title: 'Are you sure?',
-      message: 'You want to delete this file?.',
-      buttons: [
-        {
-          label: 'Yes',
-          onClick: () => submit(_id)
-        },
-        {
-          label: 'No',
-          // onClick: () => alert('Click No')
-        }
-      ]
-    });
+  //     title: 'Are you sure?',
+  //     message: 'You want to delete this file?.',
+  //     buttons: [
+  //       {
+  //         label: 'Yes',
+  //         onClick: () => submit(_id)
+  //       },
+  //       {
+  //         label: 'No',
+  //         // onClick: () => alert('Click No')
+  //       }
+  //     ]
+  //   });
 
     
-  }
+  // }
   const submit =async (_id) => {
     const data = await axios.delete(
       `http://localhost:8000/deletecoach/${_id}`

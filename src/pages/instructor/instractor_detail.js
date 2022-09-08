@@ -8,7 +8,7 @@ import Modal from "../../components/modal";
 import { fetchSingleCoach, resetCoach } from "../../store/coach/actions";
 import { baseURL } from "../../utils/axios";
 import profimg from '../../coachfiles/3-Untitled.png'
-import { confirmAlert } from 'react-confirm-alert'; // Import
+// import { confirmAlert } from 'react-confirm-alert'; // Import
 // import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 const InstractorDetail = () => {
   let navigate=useNavigate();
@@ -31,24 +31,24 @@ const InstractorDetail = () => {
       setData(data.data?.data);
     })();
   }, []);
-  const DeleteHandlerCoach=async(_id)=>{
-    confirmAlert({
-      title: 'Confirm to submit',
-      message: 'Are you sure to do this.',
-      buttons: [
-        {
-          label: 'Yes',
-          onClick: () => submit(_id)
-        },
-        {
-          label: 'No',
-          // onClick: () => alert('Click No')
-        }
-      ]
-    });
+  // const DeleteHandlerCoach=async(_id)=>{
+  //   confirmAlert({
+  //     title: 'Confirm to submit',
+  //     message: 'Are you sure to do this.',
+  //     buttons: [
+  //       {
+  //         label: 'Yes',
+  //         onClick: () => submit(_id)
+  //       },
+  //       {
+  //         label: 'No',
+  //         // onClick: () => alert('Click No')
+  //       }
+  //     ]
+  //   });
 
     
-  }
+  // }
   const submit =async (_id) => {
     const data = await axios.delete(
       `http://localhost:8000/deleteinstractor/${_id}`
